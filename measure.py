@@ -38,7 +38,7 @@ while True:
         PumpOff (26)
     if water_full < 100:
         print ("water empty")
-        pumpOn (26)
+        PumpOn (26)
     print RCtime(16)     # Read RC timing using pin #18
 
 #    water_empty = RCtime(23)
