@@ -1,0 +1,13 @@
+Background
+
+Part 1
+During last years science fair project, I noticed a need to be able to automatically feed the MS Media liquid into my plant trays. I also needed to log the amount of liquid I dispensed. Last year I was carefully pouring the MS Media liquid into a tiny funnel in my plant trays, taking care not to spill and using an electronic measuring device I made to fill the trays to 6.35mm. I was also using a graduated cylinder to measure the amount of MS Media I was putting into each tray.
+
+I thought, “there has to be a better way”.
+
+After speaking with my research partner from last year, Sebastian Cocioba and checking on line, I could only find very expensive scientific machines costing $750 - $25,000! These have to be manually operated, and they could not sense the tray was out of MS Media and then fill it automatically. There is a need for an automatic liquid dispensing robot in the do it yourself bio technology field and I am going to make it!
+
+Part 2
+To build this robot, I will combine what I learned last year doing my science fair project and what I learned in coding club to make the robot. The robot will need to sense that the tray is out of liquid, fill it, and report the amount of liquid dispensed. It will also print the data and report it to the cloud. 
+
+To make it available to the do it yourself bio technology community, I will publish all my plans and data on Git Hub, allowing any one in the world to download the plans and build one. This robot will make the study of plants easier for scientists around the world. Saving valuable time by performing the watering and measuring tasks for them.
