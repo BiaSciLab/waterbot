@@ -1,2 +1,2 @@
 # waterbot
-automatic watering robot
+Scientific watering bot that measure amount of liquid despensed to plant.
