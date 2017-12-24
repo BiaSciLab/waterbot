@@ -5,4 +5,9 @@ Liquid Flow Meter https://www.adafruit.com/product/828
 NPN Transistor MPS2222  
 Relay 5V Realy
 1k Resistor
+1N4001 diode
 Wire
+  From Lowes or another hardware store:
+  1/8" ID Hose Barb x 1/4" in MIP (to connect pump hose to flow meter)
+  1/2" FIP x 1/4" FIP (to connect 1/4" hose barb to flow meter)
+  1/4" OD Tube x 1/2" FIP (output hose connection from flow meter)
