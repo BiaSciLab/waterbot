@@ -11,9 +11,12 @@ GPIO.setup(21, GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 
 pulses = 0
 
-def pulse_count(Ppin):
+def pulse_count(channel):
     global pulses
     pulses = pulses+1
     print (pulses)
 
 GPIO.add_event_detect(21, GPIO.RISING, callback=pulse_count)
+
+while True:
+    print (pulses)
