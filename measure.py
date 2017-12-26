@@ -33,10 +33,10 @@ def RCtime (RCpin):
 
 while True:
     water_full = RCtime(16)
-    if water_full > 100:
+    if water_full:
         print ("water full" + str(water_full))
         PumpOff (26)
-    if water_full < 100:
+    if water_empty:
         print ("water empty")
         PumpOn (26)
     print RCtime(16)     # Read RC timing using pin #18
