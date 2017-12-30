@@ -10,7 +10,7 @@ water_empty = 12
 water_full = 16
 flow_sensor = 21
 relay = 26
-PulsesPer_mL = 39.439
+PulsesPer_mL = 45.000
 
 #Variables
 pulses = 0
@@ -46,7 +46,7 @@ while True:
         time.sleep(1)
         # Print code here
         mL_despensed = pulses / PulsesPer_mL
-        print (mL_despensed + " mL at " + current_time))
+        print ("{} mL on ".format(mL_despensed) + current_time))
         ok_to_print = False
         pulses = 0
     # Water Empty
