@@ -10,6 +10,7 @@ water_empty = 12
 water_full = 16
 flow_sensor = 21
 relay = 26
+PulsesPer_mL = 39.439
 
 #Variables
 pulses = 0
@@ -41,14 +42,16 @@ while True:
     # Water Full
     if (GPIO.input(water_full) == True):
         PumpOff (relay)
+        current_time = time.ctime()
         time.sleep(1)
         # Print code here
-        print ("water full %d " % (pulses))
+        mL_despensed = pulses / PulsesPer_mL
+        print ("%d mL at %s" % % (mL_despensed, current_time))
         ok_to_print = False
+        pulses = 0
     # Water Empty
-    if (GPIO.input(water_empty) == True) || (GPIO.input(water_full) == False):
+    if (GPIO.input(water_empty) == True) or (GPIO.input(water_full) == False):
         print ("water empty")
         ok_to_print = True # Tells the printer it can print when its done filling
-        pulses = 0
         PumpOn (relay)
         time.sleep(.01)
