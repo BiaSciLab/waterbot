@@ -46,7 +46,7 @@ while True:
         print ("water full %d " % (pulses))
         ok_to_print = False
     # Water Empty
-    if (GPIO.input(water_empty) == True):
+    if (GPIO.input(water_empty) == True) || (GPIO.input(water_full) == False):
         print ("water empty")
         ok_to_print = True # Tells the printer it can print when its done filling
         pulses = 0
