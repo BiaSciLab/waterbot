@@ -46,7 +46,7 @@ while True:
         time.sleep(1)
         # Print code here
         mL_despensed = pulses / PulsesPer_mL
-        print ("%d mL at %s" % % (mL_despensed, current_time))
+        print (mL_despensed + " mL at " + current_time))
         ok_to_print = False
         pulses = 0
     # Water Empty
