@@ -3,6 +3,7 @@
 # Import libraries
 from __future__ import print_function
 import RPi.GPIO as GPIO, time, os
+from PIL import Image
 from Adafruit_Thermal import *
 
 printer = Adafruit_Thermal("/dev/serial0", 19200, timeout=5)
@@ -50,10 +51,12 @@ while True:
         time.sleep(1)
         mL_despensed = pulses / PulsesPer_mL
         print ("{} mL on ".format(mL_despensed) + current_time)
-        printer.println("{} mL on ".format(mL_despensed) + current_time)
+        printer.println("{} mL on ".format(mL_despensed))
+        printer.println(current_time)
+        printer.printImage(Image.open('BiaBotLabLogoPrint.png'), True)
         ok_to_print = False
         pulses = 0
-        time.sleep(10)
+        time.sleep(5)
     # Water Empty
     if (GPIO.input(water_empty) == True) or (GPIO.input(water_full) == False):
         mL_despensed = pulses / PulsesPer_mL
