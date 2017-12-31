@@ -51,7 +51,7 @@ while True:
         time.sleep(1)
         mL_despensed = pulses / PulsesPer_mL
         print ("{} mL on ".format(mL_despensed) + current_time)
-        printer.println("{} mL on ".format(mL_despensed))
+        printer.println("{} mL despensed on ".format(mL_despensed))
         printer.println(current_time)
         printer.feed(1)
         printer.printImage(Image.open('BiaBotLabLogoPrint.png'), True)
@@ -61,7 +61,7 @@ while True:
         printer.feed(3)
         ok_to_print = False
         pulses = 0
-        time.sleep(5)
+        time.sleep(15)
     # Water Empty
     if (GPIO.input(water_empty) == True) or (GPIO.input(water_full) == False):
         mL_despensed = pulses / PulsesPer_mL
