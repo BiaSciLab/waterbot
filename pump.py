@@ -53,7 +53,12 @@ while True:
         print ("{} mL on ".format(mL_despensed) + current_time)
         printer.println("{} mL on ".format(mL_despensed))
         printer.println(current_time)
+        printer.feed(1)
         printer.printImage(Image.open('BiaBotLabLogoPrint.png'), True)
+        printer.feed(1)
+        printer.println("Follow me on Twitter:")
+        printer.println("@BiaSciLab")
+        printer.feed(3)
         ok_to_print = False
         pulses = 0
         time.sleep(5)
