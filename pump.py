@@ -2,9 +2,10 @@
 
 # Import libraries
 import RPi.GPIO as GPIO, time, os
+from __future__ import print_function
 from Adafruit_Thermal import *
 
-printer = Adafruit_Thermal("/def/serial0", 19200, timeout=5)
+printer = Adafruit_Thermal("/dev/serial0", 19200, timeout=5)
 
 DEBUG = 1
 
@@ -49,11 +50,11 @@ while True:
         time.sleep(1)
         mL_despensed = pulses / PulsesPer_mL
         print ("{} mL on ".format(mL_despensed) + current_time)
-        printer.println("{} mL on ".format(mL_despensed) + current_time)
+        printer.print ("{} mL on ".format(mL_despensed) + current_time)
         printer.feed(1)
         ok_to_print = False
         pulses = 0
-        time.sleep(3)
+        time.sleep(10)
     # Water Empty
     if (GPIO.input(water_empty) == True) or (GPIO.input(water_full) == False):
         mL_despensed = pulses / PulsesPer_mL
