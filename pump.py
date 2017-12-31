@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 # Import libraries
-import RPi.GPIO as GPIO, time, os
 from __future__ import print_function
+import RPi.GPIO as GPIO, time, os
 from Adafruit_Thermal import *
 
 printer = Adafruit_Thermal("/dev/serial0", 19200, timeout=5)
@@ -14,7 +14,7 @@ water_empty = 12
 water_full = 16
 flow_sensor = 21
 relay = 26
-PulsesPer_mL = 650.000 # data sheet says 450 pulses per Liter my testing got 650
+PulsesPer_mL = 650 # data sheet says 450 pulses per Liter my testing got 650
 
 #Variables
 pulses = 0
@@ -50,8 +50,7 @@ while True:
         time.sleep(1)
         mL_despensed = pulses / PulsesPer_mL
         print ("{} mL on ".format(mL_despensed) + current_time)
-        printer.print ("{} mL on ".format(mL_despensed) + current_time)
-        printer.feed(1)
+        printer.println("{} mL on ".format(mL_despensed) + current_time)
         ok_to_print = False
         pulses = 0
         time.sleep(10)
