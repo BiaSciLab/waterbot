@@ -11,10 +11,10 @@ printer = Adafruit_Thermal("/dev/serial0", 19200, timeout=5)
 DEBUG = 1
 
 # Pin 'constants'
-water_empty = 12
-water_full = 16
-flow_sensor = 21
-relay = 26
+water_empty = 4
+water_full = 17
+flow_sensor = 18
+relay = 27
 PulsesPer_mL = 650 # data sheet says 450 pulses per Liter my testing got 650
 
 #Variables
@@ -65,7 +65,7 @@ while True:
 
     # Water Empty
     if (GPIO.input(water_empty) == True) or (GPIO.input(water_full) == False):
-        PumpOn (relay) # turns on the pump 
+        PumpOn (relay) # turns on the pump
         mL_despensed = pulses / PulsesPer_mL # counts pulses while it fills
         print ("{} mL".format(mL_despensed)) # prints pulses to the screen
         ok_to_print = True # Tells the printer it can print when its done filling
