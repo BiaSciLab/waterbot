@@ -58,6 +58,10 @@ while True:
         printer.feed(1)
         printer.println("Follow me on Twitter:")
         printer.println("@BiaSciLab")
+        printer.println("Friend me on Facebook:")
+        printer.println("Bia Sci Lab")
+        printer.println("Make your own waterbot!")
+        printer.println("https://github.com/biascilab/waterbot")
         printer.feed(3)
         ok_to_print = False # sets it not print again until next time
         pulses = 0 # resets pulses
