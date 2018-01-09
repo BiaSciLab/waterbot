@@ -15,7 +15,7 @@ water_empty = 4
 water_full = 17
 flow_sensor = 18
 relay = 27
-PulsesPer_mL = 650 # data sheet says 450 pulses per Liter my testing got 650
+PulsesPer_mL = 220 # data sheet says 450 pulses per Liter my testing got 650
 
 #Variables
 pulses = 0
@@ -68,9 +68,13 @@ while True:
         time.sleep(15) # waits for it to finish printing
 
     # Water Empty
-    if (GPIO.input(water_empty) == True) or (GPIO.input(water_full) == False):
+    if (GPIO.input(water_empty) == False): # run when water is below empty
         PumpOn (relay) # turns on the pump
         mL_despensed = pulses / PulsesPer_mL # counts pulses while it fills
         print ("{} mL".format(mL_despensed)) # prints pulses to the screen
-        ok_to_print = True # Tells the printer it can print when its done filling
-        time.sleep(.001)
+        # ok_to_print = True # Tells the printer it can print when its done filling
+        time.sleep(.25)
+
+    if (GPIO.input(water_empty) == False) and (GPIO.input(water_full) == False): #totally out of water
+        ok_to_print = True
+        time.sleep(1)
